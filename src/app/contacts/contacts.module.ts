@@ -23,10 +23,8 @@ import { ContactsService } from './services/contacts.service';
  */
 import { routing } from './contacts.routes';
 
-export const moduleName =
-  angular.module('application.contacts', [
-      'ui.router'
-  ])
+export const moduleName = angular
+  .module('application.contacts', ['ui.router'])
 
   /**
    * Register Module Components
@@ -48,5 +46,4 @@ export const moduleName =
   /**
    * Register Module Configuration
    */
-  .config(routing)
-  .name;
+  .config(routing).name;

@@ -23,6 +23,5 @@ import { moduleName as appModule } from './app/app.module';
 /**
  * Bootstrap the application using the imported moduleName
  */
-const bootstrapModuleName = angular.module('application.bootstrap', [
-  appModule
-]).name;
+const bootstrapModuleName = angular.module('application.bootstrap', [appModule])
+  .name;

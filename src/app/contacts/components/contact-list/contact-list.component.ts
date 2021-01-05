@@ -5,13 +5,13 @@ import './contact-list.component.scss';
 
 class ContactListController {
   contacts: { name: string }[];
-  contactRemoved: ($event: { $event: { id: number }}) => void;
+  contactRemoved: ($event: { $event: { id: number } }) => void;
 
   remove(contact: { id: number }) {
     this.contactRemoved({
       $event: {
-          id: contact.id
-      }
+        id: contact.id,
+      },
     });
   }
 }
@@ -20,7 +20,7 @@ export class ContactList implements angular.IComponentOptions {
   static selector = 'contactList';
   static bindings = {
     contacts: '<',
-    contactRemoved: '&'
+    contactRemoved: '&',
   };
   static controller = ContactListController;
   static template = `

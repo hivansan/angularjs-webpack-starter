@@ -1,5 +1,4 @@
-module.exports = function(config) {
-
+module.exports = function (config) {
   var browsers = ['PhantomJS'];
 
   /*if (process.env.TRAVIS) {
@@ -16,17 +15,13 @@ module.exports = function(config) {
     customLaunchers: {
       Chrome_Travis: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox']
-      }
+        flags: ['--no-sandbox'],
+      },
     },
 
-    frameworks: [
-      'jasmine'
-    ],
+    frameworks: ['jasmine'],
 
-    files: [
-      './src/index.spec.js'
-    ],
+    files: ['./src/index.spec.js'],
 
     reporters: ['progress', 'coverage'],
 
@@ -37,14 +32,14 @@ module.exports = function(config) {
     webpack: require('./webpack-test.config'),
 
     webpackMiddleware: {
-      stats: 'errors-only'
+      stats: 'errors-only',
     },
 
     coverageReporter: {
       type: 'json',
       subdir: '.',
       dir: 'build/coverage/',
-      file: 'coverage.json'
+      file: 'coverage.json',
     },
 
     plugins: [
@@ -53,7 +48,7 @@ module.exports = function(config) {
       require('karma-phantomjs-launcher'),
       require('karma-chrome-launcher'),
       require('karma-webpack'),
-      require('karma-sourcemap-loader')
-    ]
+      require('karma-sourcemap-loader'),
+    ],
   });
 };

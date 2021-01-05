@@ -4,29 +4,36 @@ import { ContactsService } from './contacts.service';
 
 describe('Contacts container', () => {
   beforeEach(() => {
-    angular
-      .module('app', [])
-      .service('contactsService', ContactsService);
+    angular.module('app', []).service('contactsService', ContactsService);
     angular.mock.module('app');
   });
 
-  it('should exist', angular.mock.inject((contactsService: ContactsService) => {
-    expect(contactsService).toBeDefined();
-  }));
+  it(
+    'should exist',
+    angular.mock.inject((contactsService: ContactsService) => {
+      expect(contactsService).toBeDefined();
+    })
+  );
 
-  it('should generate an id when adding a new contact', angular.mock.inject((contactsService: ContactsService) => {
-    const contact = {
-      firstName: 'John',
-      lastName: 'Doe'
-    };
+  it(
+    'should generate an id when adding a new contact',
+    angular.mock.inject((contactsService: ContactsService) => {
+      const contact = {
+        firstName: 'John',
+        lastName: 'Doe',
+      };
 
-    contactsService.add(contact);
+      contactsService.add(contact);
 
-    expect(contactsService.contacts[1].id).toBe(2);
-  }));
+      expect(contactsService.contacts[1].id).toBe(2);
+    })
+  );
 
-  it('should remove a contact by id', angular.mock.inject((contactsService: ContactsService) => {
-    contactsService.remove(1);
-    expect(contactsService.contacts.length).toBe(0);
-  }));
+  it(
+    'should remove a contact by id',
+    angular.mock.inject((contactsService: ContactsService) => {
+      contactsService.remove(1);
+      expect(contactsService.contacts.length).toBe(0);
+    })
+  );
 });
